@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: n3laygqlm-nodejs-gitops
+  description: This is GitOps manifest for n3laygqlm-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=n3laygqlm-nodejs
+    backstage.io/kubernetes-id: n3laygqlm-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: n3laygqlm-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:n3laygqlm-nodejs
